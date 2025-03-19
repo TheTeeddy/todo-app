@@ -1,0 +1,17 @@
+button {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 80%;
+  }
+}
+
+.border {
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+}
+
+.invert-color {
+  color: var(--main-color);
+  background-color: var(--accent-color);
+}

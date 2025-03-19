@@ -1,0 +1,33 @@
+.todo-wrapper {
+  width: 20% !important;
+  background-color: #cec997;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+
+  p {
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    background: transparent;
+    color: var(--main-color);
+    font-weight: bold;
+  }
+}
+
+.todo-btns {
+  display: flex;
+  background: transparent;
+
+  button {
+    font-weight: bolder;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    aspect-ratio: 5/2 !important;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}

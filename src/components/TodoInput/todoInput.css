@@ -1,0 +1,24 @@
+.input-wrapper {
+  display: flex;
+  width: 20% !important;
+  margin-bottom: 2rem;
+}
+
+#addInput {
+  width: 70%;
+  height: auto;
+  outline: none;
+  border: none;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  padding-inline: 1.5rem;
+  font-size: 1.5rem;
+  &::placeholder {
+    color: #cec997;
+  }
+}
+
+.plus-area {
+  width: 15%;
+  margin-inline: auto;
+}

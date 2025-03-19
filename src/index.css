@@ -1,0 +1,22 @@
+:root {
+  --main-color: #101820;
+  --accent-color: #fee715;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--main-color);
+  color: var(--accent-color);
+  font-family: Inter;
+}
+
+#root {
+  margin-top: 2.5rem;
+  margin-inline: 2rem;
+
+  > * {
+    width: 50%;
+  }
+}
