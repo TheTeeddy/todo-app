@@ -1,17 +1,19 @@
 .input-wrapper {
   display: flex;
   width: 20% !important;
+  height: 50px;
   margin-bottom: 2rem;
+  align-items: center;
 }
 
 #addInput {
   width: 70%;
-  height: auto;
+  height: 100%;
   outline: none;
   border: none;
   border: 2px solid var(--accent-color);
   border-radius: 8px;
-  padding-inline: 1.5rem;
+  padding: 0.5rem 1.5rem;
   font-size: 1.5rem;
   &::placeholder {
     color: #cec997;
@@ -20,5 +22,16 @@
 
 .plus-area {
   width: 15%;
+  height: 100%;
   margin-inline: auto;
+  text-align: center;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+
+  button {
+    all: unset;
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
+  }
 }

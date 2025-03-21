@@ -24,7 +24,7 @@
   color: #d72638;
 }
 .tab-completed span {
-  color: #00ff66;
+  color: #00e65c;
 }
 
 .active::before {
@@ -36,5 +36,4 @@
   width: 100%;
   height: 2px;
   background-color: var(--accent-color);
-  z-index: 100;
 }

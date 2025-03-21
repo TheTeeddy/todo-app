@@ -1,18 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TodoContext } from '../context/todoContext'
-
-const todoList = [
-  {
-    description: 'Hello! Add your first todo!',
-    completed: true,
-  },
-]
+import { getFromLocalStorage } from './utils/utils'
 
 const TodoProvider = ({ children }) => {
-  const [todos, setTodos] = useState(todoList)
+  const [todos, setTodos] = useState([])
+  const [activeTab, setActiveTab] = useState('all')
+
+  useEffect(() => {
+    if (!localStorage.getItem('todos'))
+      localStorage.setItem(
+        'todos',
+        JSON.stringify([
+          {
+            description: 'Hello! Add your first todo!',
+            completed: false,
+          },
+        ])
+      )
+    const todoList = JSON.parse(getFromLocalStorage())
+    setTodos(todoList)
+  }, [])
 
   return (
-    <TodoContext.Provider value={{ todos, setTodos }}>
+    <TodoContext.Provider value={{ todos, setTodos, activeTab, setActiveTab }}>
       {children}
     </TodoContext.Provider>
   )

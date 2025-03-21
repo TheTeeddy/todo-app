@@ -1,7 +1,11 @@
 button {
-  cursor: pointer;
+  cursor: pointer !important;
 
-  &:hover {
+  &:disabled {
+    background-color: #00e65c;
+  }
+
+  &:hover:not(:disabled) {
     opacity: 80%;
   }
 }

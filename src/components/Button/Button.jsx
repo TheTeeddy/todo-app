@@ -1,14 +1,18 @@
 import './button.css'
 
-const Button = ({ children, size, invert, border, w }) => {
+const Button = ({ children, size, invert, onClick, disabled }) => {
   const styles = {
     fontSize: size || '',
-    width: w || 'auto',
   }
 
-  const classes = `${invert ? 'invert-color' : ''} ${border ? 'border' : ''}`
+  const classes = `${invert ? 'invert-color' : ''}`
   return (
-    <button className={classes} style={styles}>
+    <button
+      className={classes}
+      style={styles}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   )

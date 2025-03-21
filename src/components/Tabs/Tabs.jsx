@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import './tabs.css'
 import { useTodo } from '../../hooks/useTodo'
+import { capitalizeText } from '../utils/utils'
 
 const Tabs = () => {
-  const [activeTab, setActiveTab] = useState('all')
-
-  const { todos } = useTodo()
+  const { todos, activeTab, setActiveTab } = useTodo()
+  const tabs = ['all', 'open', 'completed']
 
   const getTabCount = tab => {
     switch (tab) {
@@ -23,8 +22,6 @@ const Tabs = () => {
   const handleTabs = e => {
     setActiveTab(e.target.id)
   }
-
-  const tabs = ['all', 'open', 'completed']
   return (
     <div className='tabs-wrapper' onClick={handleTabs}>
       {tabs.map((tab, tabIndex) => (
@@ -33,8 +30,7 @@ const Tabs = () => {
           id={tab}
           className={`tab-${tab} ${activeTab === tab ? 'active' : ''}`}
         >
-          {tab.charAt(0).toUpperCase() + tab.slice(1)}{' '}
-          <span id={tab}>({getTabCount(tab)})</span>
+          {capitalizeText(tab)} <span id={tab}>({getTabCount(tab)})</span>
         </div>
       ))}
     </div>
